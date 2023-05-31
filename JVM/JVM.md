@@ -55,7 +55,7 @@ System.out.print(str2 == str3) //false;
 
 1. **1.6之前是存放在方法去的，1.8开始存放在堆中**。
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230327224942498.png" alt="image-20230327224942498" style="zoom: 50%;" />
+<img src="JVM.assets/image-20230327224942498.png" alt="image-20230327224942498" style="zoom: 50%;" />
 
 2.**StringTable是可以进行垃圾回收的**
 
@@ -69,9 +69,9 @@ System.out.print(str2 == str3) //false;
 
 1. 直接内存与二次缓存之间的区别
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230327233437494.png" alt="image-20230327233437494" style="zoom: 67%;" />
+   <img src="JVM.assets/image-20230327233437494.png" alt="image-20230327233437494" style="zoom: 67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230327233458131.png" alt="image-20230327233458131" style="zoom: 67%;" />
+<img src="JVM.assets/image-20230327233458131.png" alt="image-20230327233458131" style="zoom: 67%;" />
 
 2. ```java
    //通过allocateDirect（）来分配direct Memory的大小
@@ -129,7 +129,7 @@ for(){
 
 **相关JVM堆中的指令**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230328152458325.png" alt="image-20230328152458325" style="zoom: 67%;" />
+<img src="JVM.assets/image-20230328152458325.png" alt="image-20230328152458325" style="zoom: 67%;" />
 
 #### 垃圾回收器
 
@@ -153,7 +153,7 @@ for(){
 
    3. CMS流程
 
-      <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230328191005837.png" alt="image-20230328191005837" style="zoom: 67%;" />
+      <img src="JVM.assets/image-20230328191005837.png" alt="image-20230328191005837" style="zoom: 67%;" />
 
 ​		4.**G1（Garbage first 默认版本jdk9以后）**；jdk9之前要手动启动，同时注重吞吐量和低延迟，默认的暂停目标是200ms（strop the world）。适用于超大堆内存，会将堆划分为多个大小相等的Region，整体上是**标记+整理**算法，两个区域之间是复制算法。
 
@@ -209,22 +209,22 @@ for(){
 
 1. **可见性问题**:run改为false之后，程序并未停止下来原因是：
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329215251522.png" alt="image-20230329215251522" style="zoom: 80%;" />
+   <img src="JVM.assets/image-20230329215251522.png" alt="image-20230329215251522" style="zoom: 80%;" />
 
    
 
 ​	原因:
 
-​	<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329215406251.png" alt="image-20230329215406251" style="zoom: 67%;" />
+​	<img src="JVM.assets/image-20230329215406251.png" alt="image-20230329215406251" style="zoom: 67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329215433854.png" alt="image-20230329215433854" style="zoom: 67%;" />
+<img src="JVM.assets/image-20230329215433854.png" alt="image-20230329215433854" style="zoom: 67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329215450760.png" alt="image-20230329215450760" style="zoom: 67%;" />
+<img src="JVM.assets/image-20230329215450760.png" alt="image-20230329215450760" style="zoom: 67%;" />
 
 2. **处理可见性问题**
    1. **volatile（易变关键字）**：他可以用来修饰成员变量和静态成员变量，他可以避免线程从自己的工作缓存中查找变量的值，必须到主存中获取他的值，线程操作volatile变量都是直接操作主存。
 
-​			 <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329215817766.png" alt="image-20230329215817766" style="zoom:67%;" />
+​			 <img src="JVM.assets/image-20230329215817766.png" alt="image-20230329215817766" style="zoom:67%;" />
 
 ​		2.volatile不能保证原子性。  适合一个写线程，多个读线程。
 
@@ -232,4 +232,4 @@ for(){
 
 ## CAS
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230329224859551.png" alt="image-20230329224859551" style="zoom:67%;" />
+<img src="JVM.assets/image-20230329224859551.png" alt="image-20230329224859551" style="zoom:67%;" />

@@ -106,31 +106,31 @@ git pull 远程库地址别名 远程分支名   #将远程仓库分支最新内
 
 4. **定位Git程序**
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530212345753.png" alt="image-20230530212345753" style="zoom:67%;" />
+   <img src="Git学习.assets/image-20230530212345753.png" alt="image-20230530212345753" style="zoom:67%;" />
 
 5. **设置Github账号**
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530215615248.png" alt="image-20230530215615248" style="zoom:80%;" />
+   <img src="Git学习.assets/image-20230530215615248.png" alt="image-20230530215615248" style="zoom:80%;" />
 
 6. **初始化本地库**
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530212510137.png" alt="image-20230530212510137" style="zoom:67%;" />
+   <img src="Git学习.assets/image-20230530212510137.png" alt="image-20230530212510137" style="zoom:67%;" />
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530221042550.png" alt="image-20230530221042550" style="zoom:80%;" />
+   <img src="Git学习.assets/image-20230530221042550.png" alt="image-20230530221042550" style="zoom:80%;" />
 
 6. **添加到暂存区、提交到本地库**
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530212607005.png" alt="image-20230530212607005" style="zoom: 80%;" />
+   <img src="Git学习.assets/image-20230530212607005.png" alt="image-20230530212607005" style="zoom: 80%;" />
 
 7. **添加到仓库**
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530215302443.png" alt="image-20230530215302443" style="zoom:80%;" />
+   <img src="Git学习.assets/image-20230530215302443.png" alt="image-20230530215302443" style="zoom:80%;" />
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530215224170.png" alt="image-20230530215224170" style="zoom:67%;" />
+   <img src="Git学习.assets/image-20230530215224170.png" alt="image-20230530215224170" style="zoom:67%;" />
 
 8.**Clone仓库**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530221600328.png" alt="image-20230530221600328" style="zoom:80%;" />
+<img src="Git学习.assets/image-20230530221600328.png" alt="image-20230530221600328" style="zoom:80%;" />
 
 ## 总结
 
@@ -155,15 +155,16 @@ git pull 远程库地址别名 远程分支名   #将远程仓库分支最新内
 2. 在IDEA上建立Github账号跟码云账号
 3. 不管是pull还是push，都直接点击下图的俩
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530221933579.png" alt="image-20230530221933579" style="zoom:80%;" />
+<img src="Git学习.assets/image-20230530221933579.png" alt="image-20230530221933579" style="zoom:80%;" />
 
 4. 然后直接在对应的Github或者是Gitee上建立仓库
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530222219538.png" alt="image-20230530222219538" style="zoom:80%;" />
+   <img src="Git学习.assets/image-20230530222219538.png" alt="image-20230530222219538" style="zoom:80%;" />
 
 5. Clone仓库是
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530221600328.png" alt="image-20230530221600328" style="zoom: 50%;" />
+   <img src="Git学习.assets/image-20230530221600328-1685529791995-11.png" alt="image-20230530221600328" style="zoom: 50%;" />
 
 6. 之后Add等都直接在主目录下右键Git--> 
-7. <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230530222804833.png" alt="image-20230530222804833" style="zoom:67%;" />
+7. <img src="Git学习.assets/image-20230530222804833.png" alt="image-20230530222804833" style="zoom:67%;" />
+

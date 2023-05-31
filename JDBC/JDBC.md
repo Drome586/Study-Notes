@@ -66,7 +66,7 @@ Connection connection = DriverManager.getConnection(url, user, password);
 | java.sql.Time      | TIME                     |
 | java.sql.Timestamp | TIMESTAMP                |
 
-![image-20230114132803536](C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230114132803536.png)
+![image-20230114132803536](JDBC.assets/image-20230114132803536.png)
 
 ## 实操代码
 

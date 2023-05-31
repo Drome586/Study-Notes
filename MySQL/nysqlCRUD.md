@@ -23,7 +23,7 @@ DELETE FROM 表名 [WHERE 条件]
 
 ## DQL
 
-![image-20230324151934254](C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324151934254.png)
+![image-20230324151934254](nysqlCRUD.assets/image-20230324151934254.png)
 
 **基础查询**
 
@@ -39,7 +39,7 @@ SELECT distinct workaddress as'工作地址' FROM emp;
 
 **条件查询**
 
-![image-20230324153227759](C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324153227759.png)
+![image-20230324153227759](nysqlCRUD.assets/image-20230324153227759.png)
 
 ```sql
 #查询年龄等于80的员工
@@ -79,7 +79,7 @@ SELECT [COUNT()、MAX()、MIN()、AVG()、SUM()]FROM emp;
 
 通常配合聚合函数来操作
 
-![image-20230324155359118](C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324155359118.png)
+![image-20230324155359118](nysqlCRUD.assets/image-20230324155359118.png)
 
 ```sql
 #根据性别分组，统计男性和女性的数量
@@ -94,7 +94,7 @@ SELECT workaddress,COUNT(*) FROM emp WHERE age < 45 GROUP BY wordaddress HAVING 
 
 **排序查询**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324160605290.png" alt="image-20230324160605290" style="zoom:80%;" />
+<img src="nysqlCRUD.assets/image-20230324160605290.png" alt="image-20230324160605290" style="zoom:80%;" />
 
 ```sql
 #根据年龄对公司员工进行升序排序
@@ -106,7 +106,7 @@ SELECT * FROM emp ORDER BY age ASC,time DESC;
 
 **分页查询**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324163440430.png" alt="image-20230324163440430" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324163440430.png" alt="image-20230324163440430" style="zoom:67%;" />
 
 ```sql
 #查询第一页员工的数据，每一页展示10条记录
@@ -137,11 +137,11 @@ SELECT * FROM emp WHERE (age BETWEEN 20 AND 40) AND (gender='男') ORDER BY age 
 
 ## DCL
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324170509498.png" alt="image-20230324170509498" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324170509498.png" alt="image-20230324170509498" style="zoom:67%;" />
 
 ## DML
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324170543542.png" alt="image-20230324170543542" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324170543542.png" alt="image-20230324170543542" style="zoom:67%;" />
 
 ## 多表查询
 
@@ -169,7 +169,7 @@ SELECT * FROM emp WHERE (age BETWEEN 20 AND 40) AND (gender='男') ORDER BY age 
 
 ##### 内连接
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324203758299.png" alt="image-20230324203758299" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324203758299.png" alt="image-20230324203758299" style="zoom:67%;" />
 
 ```sql
 #查询每一个员工的姓名，以及关联部门的名称（隐式内连接
@@ -181,7 +181,7 @@ SELECT emp.name,dept.name FROM emp INNER JOIN dept ON emp.id = dept.id;
 
 ##### 外连接
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324204722905.png" alt="image-20230324204722905" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324204722905.png" alt="image-20230324204722905" style="zoom:67%;" />
 
 ```sql
 #查询emp的所有数据，并且所对应的部门信息
@@ -197,7 +197,7 @@ SELECT d.*,e.* FROM emp RIGHT JOIN dept ON emp.id = dept.id;
 
 对于union查询，就是把多次查询的结果lie合并起来，形成一个新的查询结果集,**并且多张表的列数必须一致，字段类型也必须保持一致，去掉ALL可以去重**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324211327465.png" alt="image-20230324211327465" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324211327465.png" alt="image-20230324211327465" style="zoom:67%;" />
 
 ```sql
 #将薪资低于5000的员工和年龄大于50岁的员工全部查询出来
@@ -222,7 +222,7 @@ SELECT * FROM emp WHERE dept_id = (SELECT dept_id FROM emp WHERE name = '销售�
 
 （子查询返回的是列）
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230324215716445.png" alt="image-20230324215716445" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230324215716445.png" alt="image-20230324215716445" style="zoom:67%;" />
 
 ```sql
 查询销售部和市场部的所有员工信息
@@ -301,17 +301,17 @@ for(int i = 0;i < w.length;i++){
 2. 快照读：简单的select不加锁的就是快照读，读取的是记录数据的可见版本，有可能是历史数据，不加锁是非阻塞读。开始事务后第一个才是快照读的地方，快照读可以退化为当前读
 3. MVCC（Mutil-Version Concurrency Control)多版本并发控制，指维护一个数据的多个版本，使得读写操作没有冲突，快照读为Mysql实现MVCC提供了一个非阻塞读的功能，MVCC的具体实现，还需要**数据库记录中的三个隐式字段**（DB_TRX_ID, DB_ROLL_PTR, DB_ROW_ID) **，undo log日志，readView**(负责当我们查询的时候那么多的旧的版本链，到底要返回哪一个版本呢）
 
-​	<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230330165615377.png" alt="image-20230330165615377" style="zoom:67%;" />
+​	<img src="nysqlCRUD.assets/image-20230330165615377.png" alt="image-20230330165615377" style="zoom:67%;" />
 
 4. readview
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230330172046056.png" alt="image-20230330172046056" style="zoom:67%;" />
+   <img src="nysqlCRUD.assets/image-20230330172046056.png" alt="image-20230330172046056" style="zoom:67%;" />
 
 1. 不同的隔离级别，readview读取的数据也不一样的。
    1. **READ COMMITTED** 在事务每一次执行快照读时生成readView
    2. **REPEATABLE READ** 仅在事务第一次执行快照读时生成readView ，后续复用该ReadView
 
-​	<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230330175009468.png" alt="image-20230330175009468" style="zoom:67%;" />
+​	<img src="nysqlCRUD.assets/image-20230330175009468.png" alt="image-20230330175009468" style="zoom:67%;" />
 
 ## MySQL高级篇（尚硅谷）
 
@@ -441,7 +441,7 @@ drop user '用户名'@'localhost';
 
 2. 页结构
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230418222924963.png" alt="image-20230418222924963" style="zoom:50%;" />
+   <img src="nysqlCRUD.assets/image-20230418222924963.png" alt="image-20230418222924963" style="zoom:50%;" />
 
 #### 4.4 	思考题
 
@@ -453,7 +453,7 @@ drop user '用户名'@'localhost';
 
 1. COMPACT（紧凑的）
 
-   <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230418230206960.png" alt="image-20230418230206960" style="zoom:67%;" />
+   <img src="nysqlCRUD.assets/image-20230418230206960.png" alt="image-20230418230206960" style="zoom:67%;" />
 
 2. Dynamic和Compressed（压缩的，动态的）默认时Dynamic
 
@@ -475,7 +475,7 @@ drop user '用户名'@'localhost';
    Why? 这是由主键索引的物理实现方式决定的，因为数据存储在文件中只能按照一种顺序进行存储.
 3. 联合索引：多列索引是在表的 多个字段组合上创建一个索引。该索引指向创建时对应的多个字段，可以通过这几个字段进行查询，但是只有查询条件中使用了这些字段中的第一个字段时才会被使用。例如，在表中的字段id、name和gender上建立一个多列索引idx_id_namegender，只有在查询条件中使用了字段id时该索引才会被使用。使组合索引时遵循 最左前缀集合。
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230418232609464.png" alt="image-20230418232609464" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230418232609464.png" alt="image-20230418232609464" style="zoom:67%;" />
 
 4. 非聚族索引
 
@@ -644,7 +644,7 @@ MySQL的慢查询日志，用来记录在MySQL中 响应时间超过阀值 的�
    //只是解释下是怎么操作的，并没有给你查询出来
    ```
 
-​	<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230427170633089.png" alt="image-20230427170633089" style="zoom:50%;" />
+​	<img src="nysqlCRUD.assets/image-20230427170633089.png" alt="image-20230427170633089" style="zoom:50%;" />
 
 ​	2.	重点关注type、key_len、rows、Extra
 
@@ -877,7 +877,7 @@ COMMIT 所释放的资源：
 **UUID的特点:**
 全局唯一，占用36字节，数据无序，插入性能差.
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230521170844510.png" alt="image-20230521170844510" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230521170844510.png" alt="image-20230521170844510" style="zoom:67%;" />
 
 **改造UUID**
 若将时间高低位互换，则时间就是单调递增的了，也就变得单调递增了。MySQL 8.0可以更换时间低位和时间高位的存储方式，这样UUID就是有序的UUID了。
@@ -928,21 +928,21 @@ MvSOL 8.0还解决了UUID存在的空间占用的问题，除去了UUID字符串
 
 ##### 范式的实战案例
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523101853995.png" alt="image-20230523101853995" style="zoom: 80%;" />
+<img src="nysqlCRUD.assets/image-20230523101853995.png" alt="image-20230523101853995" style="zoom: 80%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523101925044.png" alt="image-20230523101925044" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230523101925044.png" alt="image-20230523101925044" style="zoom:67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523102015503.png" alt="image-20230523102015503" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230523102015503.png" alt="image-20230523102015503" style="zoom:67%;" />
 
 <img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523102048983.png" alt="image-20230523102048983" style="zoom:67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523102114102.png" alt="image-20230523102114102" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230523102114102.png" alt="image-20230523102114102" style="zoom:67%;" />
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523102132642.png" alt="image-20230523102132642" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230523102132642.png" alt="image-20230523102132642" style="zoom:67%;" />
 
 **考虑第三范式**
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230523102227362.png" alt="image-20230523102227362" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230523102227362.png" alt="image-20230523102227362" style="zoom:67%;" />
 
 #### **2 **数据表的设计原则
 
@@ -1237,8 +1237,8 @@ OPTIMIZE TABLE 语句对InnoDB和MyISAM类型的表都有效。该语句在执�
 
 ##### 脏写
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230526205328791.png" alt="image-20230526205328791" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230526205328791.png" alt="image-20230526205328791" style="zoom:67%;" />
 
 ##### 脏读
 
-<img src="C:\Users\盐值不高的咸鱼\AppData\Roaming\Typora\typora-user-images\image-20230526205417477.png" alt="image-20230526205417477" style="zoom:67%;" />
+<img src="nysqlCRUD.assets/image-20230526205417477.png" alt="image-20230526205417477" style="zoom:67%;" />
