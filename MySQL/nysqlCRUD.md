@@ -1242,3 +1242,42 @@ OPTIMIZE TABLE 语句对InnoDB和MyISAM类型的表都有效。该语句在执�
 ##### 脏读
 
 <img src="nysqlCRUD.assets/image-20230526205417477.png" alt="image-20230526205417477" style="zoom:67%;" />
+
+##### 不可重复读（体现在更新上面）
+
+​	<img src="nysqlCRUD.assets/image-20230605225737347.png" alt="image-20230605225737347" style="zoom: 50%;" />
+
+##### 幻读（体现在插入上面）
+
+​	<img src="nysqlCRUD.assets/image-20230605230049121.png" alt="image-20230605230049121" style="zoom: 67%;" />
+
+#### SQL的四种隔离级别
+
+什么是隔离级别？ 即	上述提到的四个问题都解决啊还是只解决其中的一部分
+
+```
+脏写 > 脏读 > 不可重复读 > 幻读
+```
+
+##### `SQL标准`中设立了4个`隔离级别`：
+
+- `READ UNCOMMITTED`：读未提交，在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。不能避免脏读、不可重复读、幻读。
+- `READ COMMITTED`：读已提交，它满足了隔离的简单定义：一个事务只能看见已经提交事务所做的改变。这是大多数数据库系统的默认隔离级别（但不是MySQL默认的）。可以避免脏读，但不可重复读、幻读问题仍然存在。
+- `REPEATABLE READ`：可重复读，事务A在读到一条数据之后，此时事务B对该数据进行了修改并提交，那么事务A再读该数据，读到的还是原来的内容。可以避免脏读、不可重复读，但幻读问题仍然存在。`这是MySQL的默认隔离级别`。
+- `SERIALIZABLE`：可串行化，确保事务可以从一个表中读取相同的行。在这个事务持续期间，禁止其他事务对该表执行插入、更新和删除操作。所有的并发问题都可以避免，但性能十分低下。能避免脏读、不可重复读和幻读。
+
+​	<img src="nysqlCRUD.assets/image-20230605230828531.png" alt="image-20230605230828531" style="zoom:50%;" />
+
+**从上往下隔离级别越来越高，但是并行化越来越差。这四种隔离级别都能解决脏写的问题，所以就没在图里面，YES代表都解决不了**，
+
+##### 如何设置隔离级别
+
+> ```mysql
+> SET [GLOBAL|SESSION] TRANSACTION_ISOLATION = '隔离级别' 
+> #其中，隔离级别格式： 
+> > READ-UNCOMMITTED 
+> > READ-COMMITTED 
+> > REPEATABLE-READ 
+> > SERIALIZABLE
+> ```
+>
